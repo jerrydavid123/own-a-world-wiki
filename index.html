@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Prices, recipes and rules for the Roblox game Own A World, written from the game's own data.">
+<title>Own A World Player Wiki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/icons.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3.5 11 12 4l8.5 7"/><path d="M6 9.5V20h12V9.5"/><path d="M10 20v-5.5h4V20"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4.5h10.5A2.5 2.5 0 0 1 18 7v13H7.5A2.5 2.5 0 0 1 5 17.5z"/><path d="M5 17.5A2.5 2.5 0 0 1 7.5 15H18"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6h.01M4 12h.01M4 18h.01"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></symbol>
+  </defs>
+</svg>
+
+<header class="mast" id="mast">
+  <a class="brand" href="#home" aria-label="Own A World Player Wiki, home">
+    <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+      <rect x="3" y="3" width="34" height="34" rx="5" fill="#06111f"/>
+      <rect x="5" y="5" width="30" height="30" rx="3" fill="#8a5a2f"/>
+      <rect x="5" y="5" width="30" height="11" rx="3" fill="#4cae4a"/>
+      <path d="M5 13h4v3h4v-3h5v4h4v-4h4v3h4v-3h5v4H5z" fill="#4cae4a"/>
+      <rect x="5" y="14" width="30" height="2" fill="#2f7d33"/>
+      <rect x="10" y="22" width="5" height="4" fill="#6e4524"/><rect x="22" y="26" width="6" height="4" fill="#6e4524"/><rect x="27" y="20" width="4" height="3" fill="#a87440"/><rect x="12" y="30" width="4" height="3" fill="#a87440"/>
+      <rect x="8" y="7" width="6" height="2" fill="#7fd27c"/>
+    </svg>
+    <span class="brand-text"><span class="brand-name">Own A World</span><span class="brand-sub">Player Wiki</span></span>
+  </a>
+  <div class="search" role="search">
+    <label class="search-field">
+      <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+      <input id="q" type="search" placeholder="Search prices, recipes, rules" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Search the wiki" aria-controls="results" aria-expanded="false" enterkeyhint="search">
+      <span class="kbd" aria-hidden="true">/</span>
+    </label>
+    <div class="results" id="results" role="listbox" aria-label="Search results" hidden></div>
+  </div>
+  <button class="icon-btn" id="theme" type="button" aria-label="Switch colour theme">
+    <svg class="icon theme-light" aria-hidden="true"><use href="#i-sun"/></svg>
+    <svg class="icon theme-dark" aria-hidden="true"><use href="#i-moon"/></svg>
+  </button>
+</header>
+
+<div class="shell">
+  <nav class="rail" id="rail" aria-label="Pages">
+    <p class="rail-title">Pages</p>
+    <div id="nav"></div>
+  </nav>
+  <div class="stage">
+    <main id="main" tabindex="-1"><article class="doc" id="doc"><noscript><p>This wiki needs JavaScript to load its pages.</p></noscript></article></main>
+    <aside class="toc" id="toc" aria-label="On this page"></aside>
+  </div>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<div class="sheet" id="sheet" role="dialog" aria-label="On this page"></div>
+
+<nav class="bar" aria-label="Quick bar">
+  <a class="slot" id="s-home" href="#home"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg>Home</a>
+  <button class="slot" id="s-pages" type="button" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>Pages</button>
+  <button class="slot" id="s-search" type="button" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>Search</button>
+  <button class="slot" id="s-toc" type="button" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg>On page</button>
+</nav>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
