@@ -352,3 +352,9 @@ button { font: inherit; color: inherit; }
 
 /* element colours from the game crimefighting cards */
 .step.el-fire { border-top: 6px solid #e8562a; } .step.el-ice { border-top: 6px solid #5ac8f0; } .step.el-muscle { border-top: 6px solid #5ac85a; } .step.el-lightning { border-top: 6px solid #f2cc3a; }
+
+/* Item index filter */
+.filterbox { margin: 14px 0 6px; position: sticky; top: 8px; z-index: 5; }
+.filterbox input { width: 100%; box-sizing: border-box; font: inherit; padding: 12px 14px; border-radius: 12px; border: 2px solid var(--rim); background: var(--panel); color: inherit; }
+.filterbox input:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+tr[hidden] { display: none; }

@@ -110,6 +110,23 @@
     var target = anchor && document.getElementById(anchor);
     if (target) { target.scrollIntoView({ block: "start" }); } else { window.scrollTo(0, 0); }
     setupSpy();
+    setupFilter();
+  }
+
+  /* row filter for long tables (Item index) */
+  function setupFilter() {
+    var box = doc.querySelector("input[data-filter]");
+    if (!box) return;
+    var rows = Array.prototype.slice.call(doc.querySelectorAll("table tbody tr"));
+    var txt = rows.map(function (r) { return r.textContent.toLowerCase(); });
+    var timer;
+    box.addEventListener("input", function () {
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        var q = box.value.trim().toLowerCase();
+        rows.forEach(function (r, i) { r.hidden = !!q && txt[i].indexOf(q) < 0; });
+      }, 120);
+    });
   }
 
   function heads() { return Array.prototype.slice.call(doc.querySelectorAll("h2")); }
